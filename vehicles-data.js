@@ -2,6 +2,32 @@
 
 window.VEHICLES_DATA = [
   {
+    id: "mercedes-c180-2015",
+    marca: "Mercedes-Benz",
+    modelo: "C180",
+    versao: "A confirmar",
+    ano: "2015",
+    quilometragem: null,
+    cambio: "A confirmar",
+    combustivel: "A confirmar",
+    cor: "A confirmar",
+    preco: 104900,
+    descricao: "Veículo em preparação para anúncio. Fotos, quilometragem, versão e valor serão incluídos após a conferência final.",
+    opcionais: [
+      "Itens e versão a confirmar"
+    ],
+    imagens: [
+      "assets/images/c180-2015/c180-2015 - 1.jpeg",
+      "assets/images/c180-2015/c180-2015 - 2.jpeg",
+      "assets/images/c180-2015/c180-2015 - 3.jpeg",
+      "assets/images/c180-2015/c180-2015 - 4.jpeg",
+      "assets/images/c180-2015/c180-2015 - 5.jpeg"
+    ],
+    completo: false,
+    destaque: false,
+    vendido: false
+  },
+  {
     id: "polo-2021",
     marca: "Volkswagen",
     modelo: "Polo",
