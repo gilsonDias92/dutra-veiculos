@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | Dutra Veículos</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260630-3">
+  <script defer src="vehicles-data.js?v=20260629-2"></script>
+  <script defer src="admin.js?v=20260629-5"></script>
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Dutra Veículos, voltar ao site">
+        <svg class="brand-icon" viewBox="0 0 64 40" aria-hidden="true">
+          <path d="M8 25h48l-5-12a8 8 0 0 0-7-5H22a8 8 0 0 0-7 5L8 25Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M5 25h54v7H5z" fill="currentColor"/>
+          <circle cx="17" cy="33" r="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+          <circle cx="47" cy="33" r="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <span>Dutra <strong>Veículos</strong></span>
+      </a>
+      <nav class="admin-header-actions" aria-label="Ações do admin">
+        <a class="button button-ghost button-small" href="dashboard.html">Controle</a>
+        <a class="button button-ghost button-small" href="index.html">Ver site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="admin-main">
+    <section class="section section-light">
+      <div class="container">
+        <div class="admin-title">
+          <div>
+            <p class="eyebrow">Admin</p>
+            <h1>Cadastro de veículos</h1>
+            <p>Cadastre carros pelo formulário. As imagens podem ser caminhos dentro de <strong>assets/images</strong> ou URLs públicas, uma por linha.</p>
+          </div>
+          <div class="admin-title-actions">
+            <button class="button button-ghost" id="discard-draft-button" type="button">Descartar alterações</button>
+            <button class="button button-ghost" id="export-button" type="button">Exportar dados</button>
+          </div>
+        </div>
+
+        <div class="admin-layout">
+          <form class="admin-form" id="vehicle-form" novalidate>
+            <input id="vehicle-id" type="hidden">
+
+            <div class="field">
+              <label for="marca">Marca</label>
+              <input id="marca" name="marca" type="text" required placeholder="Volkswagen">
+            </div>
+            <div class="field">
+              <label for="modelo">Modelo</label>
+              <input id="modelo" name="modelo" type="text" required placeholder="Polo">
+            </div>
+            <div class="field">
+              <label for="versao">Versão</label>
+              <input id="versao" name="versao" type="text" required placeholder="MSI 1.6 Manual">
+            </div>
+            <div class="field">
+              <label for="ano">Ano</label>
+              <input id="ano" name="ano" type="text" required placeholder="2021/2021">
+            </div>
+            <div class="field">
+              <label for="quilometragem">Quilometragem <span>(opcional)</span></label>
+              <input id="quilometragem" name="quilometragem" type="number" min="0" inputmode="numeric" placeholder="134000">
+            </div>
+            <div class="field">
+              <label for="preco">Preço <span>(opcional)</span></label>
+              <input id="preco" name="preco" type="number" min="0" inputmode="numeric" placeholder="72500">
+            </div>
+            <div class="field">
+              <label for="cambio">Câmbio</label>
+              <input id="cambio" name="cambio" type="text" required placeholder="Manual">
+            </div>
+            <div class="field">
+              <label for="combustivel">Combustível</label>
+              <input id="combustivel" name="combustivel" type="text" required placeholder="Flex">
+            </div>
+            <div class="field">
+              <label for="cor">Cor</label>
+              <input id="cor" name="cor" type="text" required placeholder="Branca">
+            </div>
+            <div class="admin-checks field-full">
+              <label class="checkbox" for="destaque">
+                <input id="destaque" name="destaque" type="checkbox">
+                <span>Marcar como destaque</span>
+              </label>
+              <label class="checkbox" for="vendido">
+                <input id="vendido" name="vendido" type="checkbox">
+                <span>Marcar como vendido</span>
+              </label>
+            </div>
+            <div class="field field-full">
+              <label for="descricao">Descrição</label>
+              <textarea id="descricao" name="descricao" rows="4" required placeholder="Veículo completo, bem conservado e com excelente procedência."></textarea>
+            </div>
+            <div class="field field-full">
+              <label for="opcionais">Opcionais <span>(um por linha)</span></label>
+              <label class="checkbox admin-complete-option" for="completo">
+                <input id="completo" name="completo" type="checkbox">
+                <span>Completo no card e opcionais básicos</span>
+              </label>
+              <textarea id="opcionais" name="opcionais" rows="5" placeholder="Ar condicionado&#10;Direção Hidráulica&#10;Vidros Elétricos&#10;Travas Elétricas"></textarea>
+            </div>
+            <div class="field field-full">
+              <label for="imagens">Imagens <span>(uma por linha)</span></label>
+              <textarea id="imagens" name="imagens" rows="4" placeholder="assets/images/polo-01.jpg&#10;https://exemplo.com/foto.jpg"></textarea>
+            </div>
+            <div class="admin-form-actions field-full">
+              <button class="button button-primary" id="save-button" type="submit">Salvar veículo</button>
+              <button class="button button-ghost" id="clear-button" type="button">Novo cadastro</button>
+            </div>
+            <p class="form-status field-full" id="admin-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="admin-panel" aria-labelledby="saved-title">
+            <div class="admin-panel-header">
+              <h2 id="saved-title">Veículos cadastrados</h2>
+              <span id="vehicle-count">0</span>
+            </div>
+            <div class="admin-list" id="admin-list"></div>
+            <p class="empty-state" id="admin-empty">Nenhum veículo cadastrado pelo admin ainda.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

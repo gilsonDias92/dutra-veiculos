@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dutra Veículos | Compra e Venda de Veículos</title>
+  <meta name="description" content="Encontre veículos selecionados, revisados e com procedência na Dutra Veículos. Atendimento transparente e personalizado.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Dutra Veículos | Compra e Venda de Veículos">
+  <meta property="og:description" content="Veículos selecionados, revisados e com procedência. Atendimento transparente e personalizado.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/banner-polo.jpg">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260630-3">
+  <script defer src="vehicles-data.js?v=20260629-2"></script>
+  <script defer src="script.js?v=20260630-1"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Dutra Veículos, voltar ao início">
+        <svg class="brand-icon" viewBox="0 0 64 40" aria-hidden="true">
+          <path d="M8 25h48l-5-12a8 8 0 0 0-7-5H22a8 8 0 0 0-7 5L8 25Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M5 25h54v7H5z" fill="currentColor"/>
+          <circle cx="17" cy="33" r="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+          <circle cx="47" cy="33" r="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <span>Dutra <strong>Veículos</strong></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-menu" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#estoque">Estoque</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#contato">Contato</a>
+        <a href="admin.html">Admin</a>
+        <a href="dashboard.html">Controle</a>
+        <a class="button button-small button-whatsapp nav-whatsapp" data-whatsapp="general" href="#">Falar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content reveal">
+        <p class="eyebrow">Dutra Veículos</p>
+        <h1 id="hero-title">Seu novo carro está aqui</h1>
+        <p class="hero-text">Veículos selecionados, revisados e com procedência para você comprar com segurança.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#estoque">Ver veículos</a>
+          <a class="button button-secondary" data-whatsapp="general" href="#">Falar com um consultor</a>
+        </div>
+        <p class="hero-trust">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.3 8.4-7 10-3.7-1.6-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-5"/></svg>
+          Mais de 20 anos de experiência no mercado automotivo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-light" id="estoque" aria-labelledby="estoque-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Nosso estoque</p>
+          <h2 id="estoque-title">Veículos disponíveis</h2>
+          <p>Conheça nosso estoque e encontre o veículo ideal para você.</p>
+        </div>
+
+        <form class="filters reveal" id="filters-form" aria-label="Filtros do estoque">
+          <div class="field filter-search">
+            <label for="search-filter">Buscar por nome ou modelo</label>
+            <input id="search-filter" type="search" placeholder="Ex.: Polo, Gol, Volkswagen">
+          </div>
+          <button class="button button-ghost filter-reset" type="reset">Limpar filtros</button>
+        </form>
+
+        <div class="inventory" id="inventory" aria-live="polite"></div>
+        <p class="empty-state" id="empty-state" hidden>Nenhum veículo foi encontrado com esses filtros.</p>
+      </div>
+    </section>
+
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Sobre nós</p>
+          <h2 id="sobre-title">Confiança construída ao longo dos anos</h2>
+          <p>Na Dutra Veículos, cada carro é selecionado com cuidado para oferecer segurança, transparência e tranquilidade em todas as etapas da compra.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="info-card reveal">
+            <span class="info-icon" aria-hidden="true">20+</span>
+            <h3>Mais de 20 anos de experiência</h3>
+            <p>Experiência no mercado automotivo para orientar cada cliente com responsabilidade e conhecimento.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="info-icon" aria-hidden="true">✓</span>
+            <h3>Veículos de procedência</h3>
+            <p>Selecionamos veículos com histórico conhecido e informações apresentadas com transparência.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="info-icon" aria-hidden="true">100%</span>
+            <h3>Fotos 100% reais</h3>
+            <p>As imagens mostram os veículos reais do estoque. Não usamos imagens geradas por IA para representar os carros anunciados.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="info-icon" aria-hidden="true">⚙</span>
+            <h3>Veículos revisados</h3>
+            <p>Os veículos passam por avaliação antes de serem anunciados, reduzindo riscos e surpresas após a compra.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="info-icon" aria-hidden="true">R$</span>
+            <h3>Sem pendências financeiras</h3>
+            <p>Verificamos a situação documental e financeira do veículo antes da conclusão da negociação.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="info-icon" aria-hidden="true">↔</span>
+            <h3>Atendimento próximo</h3>
+            <p>Você fala diretamente com quem conhece o veículo e acompanha a negociação do início ao fim.</p>
+          </article>
+        </div>
+
+        <div class="trust-strip reveal" aria-label="Diferenciais da Dutra Veículos">
+          <div><strong>+20 anos</strong><span>de experiência</span></div>
+          <div><strong>Fotos reais</strong><span>do próprio estoque</span></div>
+          <div><strong>Procedência</strong><span>avaliada antes da venda</span></div>
+          <div><strong>Atendimento</strong><span>direto e personalizado</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="contato" aria-labelledby="contato-title">
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contato</p>
+          <h2 id="contato-title">Fale com a Dutra Veículos</h2>
+          <p>Conte o que você procura. Respondemos com clareza, sem pressão e com informações reais sobre cada veículo.</p>
+          <div class="contact-list">
+            <a data-whatsapp="general" href="#"><span>WhatsApp</span><strong>+359 87 799 2014</strong></a>
+            <a href="mailto:gilsondfilho@icloud.com"><span>E-mail</span><strong>gilsondfilho@icloud.com</strong></a>
+          </div>
+          <a class="button button-primary" data-whatsapp="general" href="#">Conversar no WhatsApp</a>
+        </div>
+
+        <!-- Para envio real, crie um formulário no Formspree com o e-mail gilsondfilho@icloud.com e substitua o valor de action abaixo. -->
+        <form class="contact-form reveal" id="contact-form" action="COLE_AQUI_O_ENDPOINT_DO_FORMSPREE" method="POST" novalidate>
+          <div class="field">
+            <label for="name">Nome completo</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <small class="error" id="name-error"></small>
+          </div>
+          <div class="field">
+            <label for="phone">Telefone</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+55 11 99999-9999" required>
+            <small class="error" id="phone-error"></small>
+          </div>
+          <div class="field">
+            <label for="email">E-mail <span>(opcional)</span></label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <small class="error" id="email-error"></small>
+          </div>
+          <div class="field">
+            <label for="vehicle-interest">Veículo de interesse <span>(opcional)</span></label>
+            <select id="vehicle-interest" name="vehicle">
+              <option value="">Selecione um veículo</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Como podemos ajudar?"></textarea>
+            <small class="error" id="message-error"></small>
+          </div>
+          <label class="checkbox field-full" for="consent">
+            <input id="consent" name="consent" type="checkbox" value="Sim" required>
+            <span>Autorizo o contato da Dutra Veículos pelos dados informados.</span>
+          </label>
+          <small class="error field-full" id="consent-error"></small>
+          <button class="button button-primary field-full" id="submit-button" type="submit">Enviar mensagem</button>
+          <p class="form-status field-full" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand footer-brand" href="#inicio">
+          <svg class="brand-icon" viewBox="0 0 64 40" aria-hidden="true"><path d="M8 25h48l-5-12a8 8 0 0 0-7-5H22a8 8 0 0 0-7 5L8 25Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M5 25h54v7H5z" fill="currentColor"/><circle cx="17" cy="33" r="5" fill="#171717" stroke="currentColor" stroke-width="3"/><circle cx="47" cy="33" r="5" fill="#171717" stroke="currentColor" stroke-width="3"/></svg>
+          <span>Dutra <strong>Veículos</strong></span>
+        </a>
+        <p>Compra e venda de veículos com transparência e segurança.</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#estoque">Estoque</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#contato">Contato</a>
+        <a href="admin.html">Admin</a>
+        <a href="dashboard.html">Controle</a>
+      </nav>
+      <div class="footer-contact">
+        <a data-whatsapp="general" href="#">+359 87 799 2014</a>
+        <a href="mailto:gilsondfilho@icloud.com">gilsondfilho@icloud.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">© <span id="current-year"></span> Dutra Veículos. Todos os direitos reservados.</div>
+  </footer>
+
+  <a class="floating-whatsapp" data-whatsapp="general" href="#" aria-label="Conversar com a Dutra Veículos pelo WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a12.6 12.6 0 0 0-10.9 19L3.6 28.5 10 27a12.8 12.8 0 1 0 6-24.1Zm0 22.5a10 10 0 0 1-5.1-1.4l-.4-.2-3.8.9.9-3.7-.2-.4A10.1 10.1 0 1 1 16 25.5Zm5.5-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.7-4.2-3.8-.3-.5.3-.5.8-1.6.1-.2 0-.5 0-.7l-1-2.4c-.3-.6-.6-.5-.8-.5h-.7c-.3 0-.7.1-1 .5-.4.4-1.4 1.4-1.4 3.4s1.5 4 1.7 4.2c.2.3 2.9 4.5 7.1 6.2 2.6 1.1 3.7 1.2 5 .9.8-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
+  </a>
+
+  <div class="modal" id="vehicle-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Fechar detalhes" data-close-modal>×</button>
+      <div class="modal-gallery">
+        <div class="gallery-main">
+          <img id="modal-main-image" src="assets/images/car-placeholder.svg" alt="">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">‹</button>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima foto">›</button>
+          <span class="gallery-counter" id="gallery-counter"></span>
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs" aria-label="Miniaturas das fotos"></div>
+      </div>
+      <div class="modal-content">
+        <p class="modal-brand" id="modal-brand"></p>
+        <h2 id="modal-title"></h2>
+        <p class="modal-version" id="modal-version"></p>
+        <p class="modal-price" id="modal-price"></p>
+        <dl class="vehicle-specs" id="modal-specs"></dl>
+        <p class="modal-description" id="modal-description"></p>
+        <div class="modal-options">
+          <h3>Principais opcionais</h3>
+          <ul id="modal-options"></ul>
+        </div>
+        <div class="modal-assurance">
+          <strong>Compra mais segura</strong>
+          <span>Veículo avaliado, documentação conferida e informações apresentadas com transparência.</span>
+        </div>
+        <a class="button button-primary button-full" id="modal-interest" href="#">Estou interessado</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

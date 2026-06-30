@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controle Interno | Dutra Veículos</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260630-3">
+  <script defer src="vehicles-data.js?v=20260629-2"></script>
+  <script defer src="business-data.js?v=20260629-1"></script>
+  <script defer src="dashboard.js?v=20260629-1"></script>
+</head>
+<body class="admin-page dashboard-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Dutra Veículos, voltar ao site">
+        <svg class="brand-icon" viewBox="0 0 64 40" aria-hidden="true">
+          <path d="M8 25h48l-5-12a8 8 0 0 0-7-5H22a8 8 0 0 0-7 5L8 25Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M5 25h54v7H5z" fill="currentColor"/>
+          <circle cx="17" cy="33" r="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+          <circle cx="47" cy="33" r="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <span>Dutra <strong>Veículos</strong></span>
+      </a>
+      <nav class="admin-header-actions" aria-label="Ações do painel">
+        <a class="button button-ghost button-small" href="admin.html">Estoque</a>
+        <a class="button button-ghost button-small" href="index.html">Ver site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="admin-main">
+    <section class="section section-light">
+      <div class="container">
+        <div class="admin-title">
+          <div>
+            <p class="eyebrow">Controle interno</p>
+            <h1>Compra, despesas e lucro</h1>
+            <p>Registre os valores por veículo e exporte o arquivo de dados para manter o histórico. Nada é salvo automaticamente no navegador.</p>
+          </div>
+          <div class="admin-title-actions">
+            <button class="button button-primary" id="export-business-button" type="button">Exportar controle</button>
+          </div>
+        </div>
+
+        <div class="dashboard-summary" aria-label="Resumo financeiro">
+          <article><span>Investido em estoque</span><strong id="summary-invested">R$ 0</strong></article>
+          <article><span>Despesas registradas</span><strong id="summary-expenses">R$ 0</strong></article>
+          <article><span>Receita de vendas</span><strong id="summary-sales">R$ 0</strong></article>
+          <article><span>Lucro realizado</span><strong id="summary-profit">R$ 0</strong></article>
+        </div>
+
+        <div class="dashboard-layout">
+          <aside class="admin-panel dashboard-sidebar" aria-labelledby="vehicles-control-title">
+            <div class="admin-panel-header">
+              <h2 id="vehicles-control-title">Veículos</h2>
+              <span id="dashboard-count">0</span>
+            </div>
+            <div class="dashboard-vehicle-list" id="dashboard-vehicle-list"></div>
+          </aside>
+
+          <section class="dashboard-detail" aria-live="polite">
+            <div class="dashboard-detail-header">
+              <div>
+                <p class="eyebrow" id="detail-brand">Veículo</p>
+                <h2 id="detail-title">Selecione um veículo</h2>
+                <p id="detail-subtitle"></p>
+              </div>
+              <strong class="profit-pill" id="detail-profit">R$ 0</strong>
+            </div>
+
+            <div class="dashboard-metrics">
+              <article><span>Compra</span><strong id="metric-purchase">R$ 0</strong></article>
+              <article><span>Despesas</span><strong id="metric-expenses">R$ 0</strong></article>
+              <article><span>Custo total</span><strong id="metric-cost">R$ 0</strong></article>
+              <article><span>Venda</span><strong id="metric-sale">R$ 0</strong></article>
+            </div>
+
+            <div class="dashboard-forms">
+              <form class="dashboard-form" id="purchase-form">
+                <h3>Compra</h3>
+                <div class="field">
+                  <label for="purchase-date">Data</label>
+                  <input id="purchase-date" type="date">
+                </div>
+                <div class="field">
+                  <label for="purchase-value">Valor</label>
+                  <input id="purchase-value" type="number" min="0" step="0.01" inputmode="decimal">
+                </div>
+                <div class="field">
+                  <label for="purchase-payment">Forma de pagamento</label>
+                  <input id="purchase-payment" type="text" placeholder="PIX, dinheiro, financiamento">
+                </div>
+                <div class="field">
+                  <label for="purchase-seller">Fornecedor</label>
+                  <input id="purchase-seller" type="text">
+                </div>
+                <div class="field field-full">
+                  <label for="purchase-notes">Observações</label>
+                  <textarea id="purchase-notes" rows="3"></textarea>
+                </div>
+                <button class="button button-primary field-full" type="submit">Atualizar compra</button>
+              </form>
+
+              <form class="dashboard-form" id="expense-form">
+                <h3>Nova despesa</h3>
+                <div class="field">
+                  <label for="expense-date">Data</label>
+                  <input id="expense-date" type="date">
+                </div>
+                <div class="field">
+                  <label for="expense-category">Categoria</label>
+                  <select id="expense-category">
+                    <option>Manutenção</option>
+                    <option>IPVA</option>
+                    <option>Documentação</option>
+                    <option>Lavagem</option>
+                    <option>Transporte</option>
+                    <option>Outros</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="expense-value">Valor</label>
+                  <input id="expense-value" type="number" min="0" step="0.01" inputmode="decimal">
+                </div>
+                <div class="field">
+                  <label for="expense-payment">Forma de pagamento</label>
+                  <input id="expense-payment" type="text">
+                </div>
+                <div class="field field-full">
+                  <label for="expense-description">Descrição</label>
+                  <input id="expense-description" type="text" placeholder="Troca de óleo, IPVA, vistoria...">
+                </div>
+                <button class="button button-primary field-full" type="submit">Adicionar despesa</button>
+              </form>
+
+              <form class="dashboard-form" id="sale-form">
+                <h3>Venda</h3>
+                <div class="field">
+                  <label for="sale-date">Data</label>
+                  <input id="sale-date" type="date">
+                </div>
+                <div class="field">
+                  <label for="sale-value">Valor</label>
+                  <input id="sale-value" type="number" min="0" step="0.01" inputmode="decimal">
+                </div>
+                <div class="field">
+                  <label for="sale-payment">Forma de pagamento</label>
+                  <input id="sale-payment" type="text" placeholder="PIX, dinheiro, financiamento">
+                </div>
+                <div class="field">
+                  <label for="sale-buyer">Comprador</label>
+                  <input id="sale-buyer" type="text">
+                </div>
+                <div class="field field-full">
+                  <label for="sale-notes">Observações</label>
+                  <textarea id="sale-notes" rows="3"></textarea>
+                </div>
+                <button class="button button-primary field-full" type="submit">Atualizar venda</button>
+              </form>
+            </div>
+
+            <section class="dashboard-expenses" aria-labelledby="expenses-title">
+              <h3 id="expenses-title">Despesas registradas</h3>
+              <div id="expenses-list" class="expenses-list"></div>
+              <p class="empty-state" id="expenses-empty">Nenhuma despesa registrada para este veículo.</p>
+            </section>
+
+            <p class="form-status" id="dashboard-status" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

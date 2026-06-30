@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Foto do veículo em breve</title>
+  <desc id="desc">Silhueta cinza de um carro sobre fundo claro.</desc>
+  <rect width="1200" height="800" fill="#f5f5f5"/>
+  <g fill="none" stroke="#a3a3a3" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M250 470h700l-62-135c-18-39-48-62-92-62H442c-45 0-76 24-96 64l-66 133Z"/>
+    <path d="M365 470l58-118c9-19 25-29 47-29h274c22 0 38 10 47 30l54 117"/>
+    <path d="M250 470c-54 0-90 32-90 80v30h880v-30c0-48-36-80-90-80"/>
+    <circle cx="350" cy="590" r="63"/>
+    <circle cx="850" cy="590" r="63"/>
+    <path d="M500 323l-38 147M700 323l38 147"/>
+  </g>
+  <text x="600" y="700" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#737373">Foto em breve</text>
+</svg>
