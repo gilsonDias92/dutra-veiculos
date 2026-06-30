@@ -582,6 +582,19 @@ body.header-over-hero .site-header:not(.scrolled) .menu-toggle span { background
     transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
   }
   .main-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
+  body.header-over-hero .site-header:not(.scrolled) .main-nav {
+    border-color: rgba(255,255,255,.24);
+    background: rgba(23,23,23,.44);
+    box-shadow: 0 18px 42px rgba(0,0,0,.28);
+    backdrop-filter: blur(16px);
+  }
+  body.header-over-hero .site-header:not(.scrolled) .main-nav > a:not(.button) {
+    color: rgba(255,255,255,.94);
+  }
+  body.header-over-hero .site-header:not(.scrolled) .main-nav > a:not(.button):hover {
+    background: rgba(255,255,255,.12);
+    color: #fff;
+  }
   .main-nav > a:not(.button) { padding: 12px; border-radius: 10px; }
   .main-nav > a:not(.button):hover { background: var(--surface-alt); }
   .nav-whatsapp { margin-top: 6px; }
